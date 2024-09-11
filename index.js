@@ -29,11 +29,20 @@ let meta = {
     }
 }
 
+let metas = [
+    meta,
+    {
+        value: "tocar baixo por 20 minutos todos os dias",
+        checked: false
+    }
+]
+
 meta.value = "agora é terminar meus livros"
 meta.log(meta.value); 
 
+console.log(metas[1].value)
 
 //funçoes
-const criarMeta = () => {}
+//const criarMeta = () => {}
 
 //function criarMeta() {}
