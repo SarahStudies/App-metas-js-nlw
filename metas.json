@@ -1,0 +1,18 @@
+[
+  {
+    "value": "Tocar baixo por 20m por dia",
+    "checked": false
+  },
+  {
+    "value": "Ler um capitulo de um livro",
+    "checked": false
+  },
+  {
+    "value": "Fazer diarias dos jogos da hoyo",
+    "checked": true
+  },
+  {
+    "value": "Ensaiar para os licenicos",
+    "checked": false
+  }
+]
