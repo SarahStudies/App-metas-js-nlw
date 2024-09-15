@@ -1,48 +1,38 @@
-//constantes, variaveis e escopos. 
-/*const mensagem = "ola mundo!";
 
-{
-    let mensagem = "ola eu";
-    console.log(mensagem);
-}
+const start = async () => {
+    while(true){
+        
+        const opcao = await select({
+            message: "Menu >",
+            choices: [
+                {
+                    name: "Cadastrar meta",
+                    value: "cadastrar"
+                },
+                {
+                    name: "Listar metas",
+                    value: "listar"
+                },
+                {
+                    name: "Sair",
+                    value: "sair"
+                }
+            ]
+        })
 
-console.log(mensagem);
-*/
-
-//------------------------------------------
-
-/*arrays e objetos
-let metas = ["Sarah", "Inter"];
-
-console.log(metas[1]);
-
-//concatenação 
-console.log(metas[0] + " é " + metas[1]);
-*/
-//objetos
-let meta = {
-    value: 'terminar trabalho de csharp',
-    adress: 2,
-    checked: true,
-    log: (info) => {
-        console.log(info)
+        switch(opcao) {
+            case "cadastrar":
+                await cadastrarMeta()
+                console.log(metas)
+                break
+            case "listar":
+                await listarMetas()
+                break
+            case "sair":
+                console.log('Até a próxima!')
+                return
+        }
     }
 }
 
-let metas = [
-    meta,
-    {
-        value: "tocar baixo por 20 minutos todos os dias",
-        checked: false
-    }
-]
-
-meta.value = "agora é terminar meus livros"
-meta.log(meta.value); 
-
-console.log(metas[1].value)
-
-//funçoes
-//const criarMeta = () => {}
-
-//function criarMeta() {}
+start();
