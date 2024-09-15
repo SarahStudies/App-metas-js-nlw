@@ -1,6 +1,6 @@
 const { select, input, checkbox } = require('@inquirer/prompts')
 
-
+var mensagem = "Bem vindo ao app de metas"
 let meta = {
     value: 'Tomar 3L de água por dia',
     checked: false,
@@ -12,11 +12,13 @@ const cadastrarMeta = async () => {
     const meta = await input({ message: "Digite a meta: "})
 
     if(meta.length == 0) {
-        console.log('A meta não pode ser vazia.')
+        mensagem = "A meta não pode ser vazia."
         return
     }
 
     metas.push({ value: meta, checked: false })
+
+    mensagem = "Meta cadastrada com sucesso!"
 }
 
 const listarMetas = async() => { 
@@ -28,7 +30,7 @@ const listarMetas = async() => {
 
     
     if(respostas.length == 0) {
-        console.log("Nenhuma meta selecionada!")
+        mensagem = "Nenhuma meta selecionada!"
         return
     }
 
@@ -45,7 +47,7 @@ const listarMetas = async() => {
 
     })
 
-    console.log('Meta(s) concluída(s)')
+    mensagem = "Meta(s) concluída(s)"
 
 
 }
@@ -125,10 +127,21 @@ const deletarMetas = async () => {
     mensagem = "Meta(s) deleta(s) com sucesso!"
 }
 
+const mostrarMensagens = () => {
+    console.clear();
+
+    if(mensagem != "") {
+        console.log(mensagem)
+        console.log("")
+        mensagem = ""
+    }
+    
+}
 
 const start = async () => {
     while(true){
-        
+        mostrarMensagens();
+
         const opcao = await select({
             message: "Menu >",
             choices: [
