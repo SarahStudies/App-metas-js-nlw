@@ -1,4 +1,14 @@
 
+
+const cadastrarMeta = async () => {
+    const meta = await input({ message: "Digite a meta: "})
+
+    if(meta.length == 0) {
+        console.log('A meta não pode ser vazia.')
+        return
+    }
+}
+
 const start = async () => {
     while(true){
         
